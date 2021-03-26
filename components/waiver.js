@@ -90,7 +90,7 @@ export default function Waiver(props) {
 
   const nameInputs = (
     <div className="flex flex-col md:flex-row">
-      <div className="w-full md:w-1/2 mb-6 md:mb-0 md:pr-2">
+      <div className="w-full md:w-1/2 mb-6 md:mb-0 md:praq1w2sED@$suyg-2">
         <label className={labelStyle} htmlFor="grid-first-name">
           First Name
         </label>
@@ -217,7 +217,7 @@ export default function Waiver(props) {
           {waiverForm}
         </div>
 
-        <div className="flex justify-center py-12">
+        <div className="flex justify-center pb-10">
           <button
             className="text-white font-bold py-2 rounded-lg px-16 text-lg hover:opacity-80 disabled:cursor-not-allowed"
             style={{
