@@ -35,5 +35,9 @@ export default function StudentWaiver(props) {
 
   console.log('WAIVER=', data);
 
-  return <div>{data ? <Waiver {...data} /> : <p>No Data</p>}</div>;
+  return (
+    <div className="overflow-y-scroll">
+      {data ? <Waiver {...data} /> : <p>No Data</p>}
+    </div>
+  );
 }

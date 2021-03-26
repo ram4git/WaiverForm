@@ -89,8 +89,8 @@ export default function Waiver(props) {
     'focus:ring-blue-450 focus:border-blue-450 border border-grey-lighter appearance-none block w-full bg-grey-lighter text-grey-darker rounded-lg  pt-3 px-4';
 
   const nameInputs = (
-    <div className="flex flex-row">
-      <div className="md:w-1/2 mb-6 md:mb-0">
+    <div className="flex flex-col md:flex-row">
+      <div className="w-full md:w-1/2 mb-6 md:mb-0 md:pr-2">
         <label className={labelStyle} htmlFor="grid-first-name">
           First Name
         </label>
@@ -114,7 +114,7 @@ export default function Waiver(props) {
           <span className="text-xs text-grey-300 pt-0">{`in the records: ${FirstName}`}</span>
         )}{' '}
       </div>
-      <div className="md:w-1/2 px-3 mb-6 md:mb-0">
+      <div className="w-full md:w-1/2 mb-6 md:mb-0 md:pl-2">
         <label className={labelStyle} htmlFor="grid-last-name">
           Last Name
         </label>
@@ -208,9 +208,9 @@ export default function Waiver(props) {
 
   return (
     <div
-      className="max-w-4xl mx-auto flex-none -ml-full rounded-xl transform shadow-lg bg-gradient-to-br -rotate-1 sm:-rotate-2 px-2 -mt-2 bg-blue-450"
+      className="max-w-4xl mx-auto flex-none -ml-full rounded-xl transform shadow-lg bg-gradient-to-br -rotate-1 lg:-rotate-1 px-0 lg:px-2 -mt-2 bg-blue-450"
       style={{background: '#1c88a3'}}>
-      <div className="container max-w-4xl mx-auto shadow-md bg-white my-8 px-8 overflow-auto py-2 rounded-xl transform rotate-1 sm:rotate-2">
+      <div className="container max-w-4xl mx-auto shadow-md bg-white my-8 px-4 md:px-8 overflow-auto py-2 rounded-xl transform rotate-1 lg:rotate-1">
         <div className="divide-y-2 divide-blue-450 divide-opacity-50 divide-solid ">
           {waiverHeader}
           {waiverTemplate}

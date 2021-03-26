@@ -1,5 +1,3 @@
-import Image from 'next/image';
-
 export default function IndexPage() {
   return (
     <div className="transform skew-y-6 sm:skew-y-0 sm:rotate-2 container bg-red-600 max-w-4xl mx-auto shadow-2xl rounded-xl mb-8 from-red-400 to-red-600 bg-gradient-to-r">
