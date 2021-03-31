@@ -1,5 +1,5 @@
 export default ({label}) => (
-  <div className="justify-center flex">
+  <div className="h-full w-full justify-center flex">
     <span className="text-center flex flex-col justify-center max-w-sm">
       <svg
         viewBox="0 0 24 24"

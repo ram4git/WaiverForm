@@ -1,28 +1,28 @@
-import {useRouter} from 'next/router';
+import {Router, useRouter} from 'next/router';
 import Waiver from '../../components/waiver';
 import {useQuery} from 'react-query';
 import {getWaiverForStudent} from '../../data';
 import Spinner from '@components/spinner';
+import Error from '@components/error';
+import {useEffect, useState} from 'react';
 
 export default function StudentWaiver(props) {
+  const [id, setId] = useState();
   const router = useRouter();
-  const {studentId, env} = router.query;
+  const {studentId, env = 'prod'} = router.query;
 
-  console.log('STUDENT ID=', studentId);
-  console.log('ENV=', env);
+  useEffect(() => {
+    setId(studentId);
+  }, [studentId]);
 
-  const {data, status} = useQuery(
-    ['waiver', studentId],
-    async (key, studentId) => {
-      console.log('S=', studentId);
-      const waiver = await getWaiverForStudent({
-        studentId: 'b35da509-70ba-40b9-becf-9569c5c2fc82',
-        env,
-      });
+  const {data, status} = useQuery(['waiver', id], async (key, sID) => {
+    const waiver = await getWaiverForStudent({
+      studentId: id,
+      env,
+    });
 
-      return waiver.json();
-    },
-  );
+    return waiver?.json();
+  });
 
   if (status === 'loading') {
     return (
@@ -33,11 +33,29 @@ export default function StudentWaiver(props) {
     );
   }
 
-  console.log('WAIVER=', data);
+  if (status === 'error') {
+    return <Error />;
+  }
+
+  if (data.WaiverStatus === 'Signed') {
+    router.push({
+      pathname: '/confirmation',
+      as: '/confirmation',
+      query: {
+        WaiverUrl: data.WaiverUrl,
+        FirstName: data.FirstName,
+        LastName: data.LastName,
+      },
+    });
+  }
 
   return (
     <div className="overflow-y-scroll">
-      {data ? <Waiver {...data} /> : <p>No Data</p>}
+      {data ? (
+        <Waiver {...data} env={env} studentId={studentId} />
+      ) : (
+        <p>No Data</p>
+      )}
     </div>
   );
 }

@@ -10,11 +10,21 @@ const envToEndpointMap = {
 const DEFAULT_ENV = 'qa';
 
 export const getWaiverForStudent = props => {
-  console.log('P=', props);
   const {studentId, env} = props;
   return fetch(
     `${
       envToEndpointMap[env || DEFAULT_ENV]
     }/school/waiver/generate/new/${studentId}`,
   );
+};
+
+export const postWaiverForm = props => {
+  const {payload, env} = props;
+  return fetch(`${envToEndpointMap[env || DEFAULT_ENV]}/school/waiver/update`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(payload),
+  });
 };
