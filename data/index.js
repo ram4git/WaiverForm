@@ -7,7 +7,7 @@ const envToEndpointMap = {
   production: 'https://budotapapi.azurewebsites.net/api',
 };
 
-const DEFAULT_ENV = 'qa';
+const DEFAULT_ENV = 'prod';
 
 export const getWaiverForStudent = props => {
   const {studentId, env} = props;
