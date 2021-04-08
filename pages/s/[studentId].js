@@ -58,7 +58,7 @@ export default function StudentWaiver(props) {
   }
 
   return (
-    <div className="overflow-y-scroll">
+    <div className="overflow-x-hidden overflow-y-scroll">
       {data ? (
         <Waiver {...data} env={env} studentId={studentId} />
       ) : (

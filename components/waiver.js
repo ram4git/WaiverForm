@@ -101,7 +101,7 @@ export default function Waiver(props) {
 
   const nameInputs = (
     <div className="flex flex-col md:flex-row">
-      <div className="w-full md:w-1/2 mb-6 md:mb-0 md:praq1w2sED@$suyg-2">
+      <div className="w-full md:w-1/2 mb-6 md:mb-0 md:p-2">
         <label className={labelStyle} htmlFor="grid-first-name">
           First Name
         </label>
