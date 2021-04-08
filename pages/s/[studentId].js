@@ -37,6 +37,14 @@ export default function StudentWaiver(props) {
     return <Error />;
   }
 
+  if (!data) {
+    router.push({
+      pathname: '/501',
+      as: '/invalid/env',
+    });
+    return null;
+  }
+
   if (data.WaiverStatus === 'Signed') {
     router.push({
       pathname: '/confirmation',
