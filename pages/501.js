@@ -9,7 +9,7 @@ export default function Custom501() {
         </h1>
         <img
           className="w-48 h-48 md:w-72 md:h-auto mx-auto bg-transparent"
-          src="/404.svg"></img>
+          src="/501.svg"></img>
         <h4 className="text-blue-500 text-center mx-8">
           You are probably given a link from a different deployment environment.
           If you still think it is a mistake, contact TAP support for
