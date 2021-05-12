@@ -89,8 +89,10 @@ export default function Waiver(props) {
 
   const waiverTemplate = (
     <div className="-mx-3 md:flex mb-6 mt-4 prose-md prose-blue flex flex-col py-8 relative">
-      <div className="px-3 mb-6 md:mb-0">{ReactHtmlParser(HtmlData)}</div>
-      <p className="text-xs text-gray-300 absolute right-0 bottom-0">{`intended for ${Email} only`}</p>
+      <div className="px-3 mb-6 md:mb-0 leading-relaxed">
+        {ReactHtmlParser(HtmlData)}
+      </div>
+      <p className="text-xs text-blue-300 absolute right-0 bottom-0">{`intended for ${Email} only`}</p>
     </div>
   );
 
@@ -125,7 +127,7 @@ export default function Waiver(props) {
           <span className="text-xs text-grey-300 pt-0">{`in the records: ${FirstName}`}</span>
         )}{' '}
       </div>
-      <div className="w-full md:w-1/2 mb-6 md:mb-0 md:pl-2">
+      <div className="w-full md:w-1/2 mb-6 md:mb-0 md:p-2">
         <label className={labelStyle} htmlFor="grid-last-name">
           Last Name
         </label>
